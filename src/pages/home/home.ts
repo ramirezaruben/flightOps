@@ -13,6 +13,9 @@ export class HomePage {
   }
   ngOnInit(){
     const browser = this.iab.create('http://demo.flightops.systems','_self',{location:'no'}); 
+    browser.on('loadstop').subscribe((e)=>{
+      browser.show();
+  });
 }
 
 }
